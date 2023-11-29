@@ -1,0 +1,24 @@
+<!-- components/data.component.html -->
+<div>
+    <h2>Data Component</h2>
+    <form>
+      <label>Name:</label>
+      <input [(ngModel)]="newData.name" name="name" />
+      <label>Value:</label>
+      <input [(ngModel)]="newData.value" name="value" type="number" />
+      <button (click)="registerData()">Register</button>
+    </form>
+  
+    <hr />
+  
+    <label>Filter:</label>
+    <input [(ngModel)]="filterKeyword" name="filter" />
+    <ul>
+      <li *ngFor="let item of getFilteredData()">
+        {{ item.name }} - {{ item.value }}
+      </li>
+    </ul>
+  
+    <p>Total: {{ calculateTotal() }}</p>
+  </div>
+  
